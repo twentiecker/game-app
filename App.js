@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React, {PureComponent} from 'react';
 import {StatusBar, StyleSheet, View} from 'react-native';
 import Entities from './src/entities';
@@ -22,7 +14,6 @@ export default class App extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        {' '}
         <GameEngine
           ref={ref => {
             this.gameEngine = ref;
@@ -30,9 +21,8 @@ export default class App extends PureComponent {
           style={styles.gameContainer}
           entities={Entities()}
           running={this.state.running}>
-          {' '}
-          <StatusBar hidden={true} />{' '}
-        </GameEngine>{' '}
+          <StatusBar hidden={true} />
+        </GameEngine>
       </View>
     );
   }
