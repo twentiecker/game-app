@@ -22,6 +22,7 @@ export default class App extends PureComponent {
           style={styles.gameContainer}
           entities={Entities()}
           running={this.state.running}
+          // add systems
           systems={Systems}>
           <StatusBar hidden={true} />
         </GameEngine>
