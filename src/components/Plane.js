@@ -9,8 +9,10 @@ const Plane = props => {
   const height = props.size[1];
   const x = props.body.position.x - width / 2;
   const y = props.body.position.y - height / 2;
+
   return (
     <Image
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         position: 'absolute',
         left: x,
@@ -31,7 +33,9 @@ export default (world, color, pos, size) => {
     size.width,
     size.height,
   );
+
   Matter.World.add(world, [initialPlane]);
+
   return {
     body: initialPlane,
     size: [size.width, size.height],
