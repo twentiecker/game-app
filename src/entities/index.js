@@ -1,9 +1,19 @@
 import Plane from './../components/Plane';
 import Matter from 'matter-js';
+
 // import Floor, Ceiling and styleSheet.js
 import Floor from '../components/Floor';
 import Ceiling from '../components/Ceiling';
 import {height, width, heightRatio, widthRatio} from '../utils/styleSheet';
+
+// import Obstacle, random, constants
+import Obstacle from '../components/Obstacle';
+import {
+  getRandom,
+  topObstacleHeight,
+  bottomObstacleHeight,
+} from '../utils/random';
+import Constants from '../utils/constants';
 
 //-- Overriding this function because the original references HTMLElement
 Matter.Common.isElement = () => false;
@@ -46,6 +56,29 @@ export default restart => {
       // {height: heightRatio * 120, width: width},
       {x: width / 2, y: 0},
       {height: 50, width: width},
+    ),
+    // add obstacle
+    Obstacle1: Obstacle(
+      world,
+      'top',
+      {
+        // x: 100,
+        // y: 200,
+        x: width * 2 - Constants.TOP_PIPE_WIDTH / 2,
+        y: getRandom(heightRatio * 100, heightRatio * 300),
+      },
+      {height: topObstacleHeight, width: Constants.TOP_PIPE_WIDTH},
+    ),
+    Obstacle2: Obstacle(
+      world,
+      'bottom',
+      {
+        // x: 100,
+        // y: 200,
+        x: width - Constants.BOTTOM_PIPE_WIDTH / 2,
+        y: getRandom(heightRatio * 300, heightRatio * 500),
+      },
+      {height: bottomObstacleHeight, width: Constants.BOTTOM_PIPE_WIDTH},
     ),
   };
 };
