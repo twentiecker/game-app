@@ -7,7 +7,7 @@ const UpdatePlane = (entities, {touches, time}) => {
     .forEach(t => {
       Matter.Body.setVelocity(entities.Plane.body, {
         x: entities.Plane.body.velocity.x,
-        y: -5,
+        y: -6,
       });
     });
 

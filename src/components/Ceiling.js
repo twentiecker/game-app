@@ -1,9 +1,9 @@
 import React from 'react';
-import {View} from 'react-native';
 import {array, object, string} from 'prop-types';
 import Matter from 'matter-js';
+import FastImage from 'react-native-fast-image';
 
-// const clouds = require('./../assets/clouds.png');
+const clouds = require('./../assets/clouds.png');
 const Ceiling = props => {
   const width = props.size[0];
   const height = props.size[1];
@@ -11,7 +11,7 @@ const Ceiling = props => {
   const y = props.body.position.y - height / 2;
 
   return (
-    <View
+    <FastImage
       style={[
         // eslint-disable-next-line react-native/no-inline-styles
         {
@@ -23,6 +23,8 @@ const Ceiling = props => {
           backgroundColor: props.color || 'pink',
         },
       ]}
+      source={clouds}
+      resizeMode={FastImage.resizeMode.stretch}
     />
   );
 };

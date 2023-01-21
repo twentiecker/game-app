@@ -24,10 +24,7 @@ const Floor = props => {
         },
       ]}>
       <Image
-        style={{
-          width: width,
-          height: height,
-        }}
+        style={{width: width, height: height}}
         source={water}
         resizeMode="stretch"
       />

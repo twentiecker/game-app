@@ -6,6 +6,7 @@ const Physics = (entities, {time, dispatch}) => {
   Matter.Events.on(engine, 'collisionStart', event => {
     dispatch({type: 'gameOver'});
   });
+
   return entities;
 };
 
